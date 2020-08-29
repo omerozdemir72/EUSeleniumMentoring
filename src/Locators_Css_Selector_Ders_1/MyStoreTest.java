@@ -98,6 +98,19 @@ Assert.assertEquals("Success: You have added iPhone to your shopping cart!\n" +
          */
 
 
+        driver.findElement(By.cssSelector("span#cart-total")).click();
+
+        Thread.sleep(1000);
+
+
+WebElement totalPrice = driver.findElement(By.cssSelector(".table-bordered>tbody>:last-of-type>:last-of-type"));
+
+        System.out.println(totalPrice.getText());
+
+
+        Assert.assertEquals("$123.20",totalPrice.getText());
+
+        System.out.println("Fiyat carta işlenmiştir..");
     }
 
 }
