@@ -22,11 +22,28 @@ public class MyStoreTest {
 
         searchArea.sendKeys("Iphone");
 
-//                                                                                                                  Tüm html kodlarında class ismi arama
+//          Class aramak için "." (nokta) kullanıyoruz.                                               Tüm html kodlarında class ismi arama
         WebElement searchButton=driver.findElement(By.cssSelector(".btn-default.btn-lg"));
 
         searchButton.click();
         //      Tüm buttonların içerisindeki class ismini arama : >>>>    button.btn-default
+        //child-parent          span.input-group-btn>button
+
+
+        /* todo   ID
+        button[id=list-view]
+        button#list-view
+         */
+
+        WebElement listButton = driver.findElement(By.cssSelector("button#list-view"));
+
+        listButton.click();
+
+
+
+
+
+
 
 
     }
