@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.Assert;
+
 
 public class MyStoreTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
 
@@ -36,14 +38,64 @@ public class MyStoreTest {
          */
 
         WebElement listButton = driver.findElement(By.cssSelector("button#list-view"));
-
+//.fa.fa-th-list
         listButton.click();
 
 
 
+/*
+todo  Contains   * işareti ile bulunur.
+
+button[onclick*=cart]
+ */
+        driver.findElement(By.cssSelector("button[onclick*=cart]")).click();
+
+
+/*
+todo Starts with-- >    Başlangıçtaki karakter ile bulma  ^ ile buluruz.    ^=
+html kodu : wishlist.add('40');
+
+button[onclick^='w']
+ */
+
+        Thread.sleep(1000);
+WebElement alert = driver.findElement(By.cssSelector("div.alert"));
+
+//Alert 'ün text halini görmek için yazdırma işlemi
+       // System.out.println(alert.getText());
+
+
+String textAlert  = alert.getText();
+
+//benim istediğim sonuç
+        String myAlert ="Success: You have added iPhone to your shopping cart!";
+
+
+        /*
+        todo 2. kısım
+
+              Assert.assertTrue(textAlert.contains(myAlert),"ürün eklenirken bir sorun olustu");
+         */
+
+
+Assert.assertEquals("Success: You have added iPhone to your shopping cart!\n" +
+        "×",textAlert);
+        System.out.println("Ürün başarıyla karta eklenmiştir..");
 
 
 
+
+        /*
+        nth of type
+     ilkii bulmak için:     class ismi button-group olan div in içerisindeki, 1. buttonu ver  -------     div.button-group>button:first-of-type
+     sonuncuyu bulmak için: div.button-group>button:last-of-type
+     ortadakini veya herhngi bir tanesini bulmak için : div.button-group>button:nth-of-type(2)
+
+
+     google arama kısmı için
+
+     ul.erkvQe>li:nth-of-type(2)
+         */
 
 
     }
