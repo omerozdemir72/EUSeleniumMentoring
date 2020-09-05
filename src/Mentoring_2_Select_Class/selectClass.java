@@ -1,5 +1,6 @@
 package Mentoring_2_Select_Class;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +29,10 @@ public class selectClass {
         WebElement soyad= driver.findElement(By.cssSelector("input[id='last_4']"));
         soyad.sendKeys("özdemir");
 
+String firstUrl = driver.getCurrentUrl();
 
+
+        System.out.println("İlk URL :  " + firstUrl);
 
 
         WebElement  element = driver.findElement(By.cssSelector("select#input_14"));
@@ -80,7 +84,34 @@ slc=new Select(element);
         slc=new Select(element);
         slc.selectByValue("10");
 
+        element =driver.findElement(By.cssSelector("#input_21"));
+       slc = new Select(element);
 
+        slc.selectByValue("Internet");
+
+
+        driver.findElement(By.xpath("//input[@type='radio']")).click();
+
+
+
+driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+
+Thread.sleep(1000);
+
+String secondUrl = driver.getCurrentUrl();
+        System.out.println("ikinci sayfanın URl'i :  " + secondUrl);
+
+        // sayfanın Url ine göre test
+        Assert.assertEquals("https://submit.jotformeu.com/submit/202468401801346/",driver.getCurrentUrl());
+
+
+        String actualResult = driver.findElement(By.xpath("//div[@id='stage']//h1")).getText();
+        Assert.assertTrue("Hata...", actualResult.contentEquals("Thank You!"));
+
+
+
+        WebElement submission = driver.findElement(By.xpath("//*[@id=\"stage\"]/div/p"));
+        Assert.assertEquals("Hata", "Your submission has been received.", submission.getText());
 
     }
 }
