@@ -1,4 +1,4 @@
-package Locators_Css_Selector_Ders_1;
+package Mentoring_1_Locators_CssSelector;
 
 public class Odev_Css_Selector {
     /*
