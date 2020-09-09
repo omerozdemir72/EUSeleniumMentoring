@@ -35,6 +35,30 @@ public class hotels {
         sehir.sendKeys(Keys.ENTER);
 
 
+        /*
+        Todo    Slider için adımlar:
+
+        1. Minimum için en sol taraftaki slider'ın kodunu bulun.
+        2.Maximum için en sağ taraftaki slider'ın kodunu bulun.
+        3.Çubuğun kodunu bulun ve daha sonra çubuğun en uzun halinin uzunluğunu bulun. (    int genisligi = kaydiriciCubugu.getSize().getWidth();  )
+        4.Sitedeki default max ve min değerleri belirleyin.
+        5.Kendi istediginiz max ve min değerleri belirleyin. (max değeri eksili belirleyin. Çünkü çubugu x ekseninin tersi yönünde hareket ettirmemiz gerekiyor!)
+        6. Nereden, ne kadar kaydırma yapacagınızı belirleyin. İçler dışlar formülünü uygulayın:    int kaydirmaOrani1 = (altFiyatim * genisligi) / (genelMaxFiyat-genelMinFiyat);
+       todo işlem:
+
+         500 te 153 birim uzunlugu var ise,   kendi belirledigim fiyatta cubuk uzunlugu kaç olur ?
+kendi fiyatim ile 153 ü çarpıyorum ve 500 e bölüyorum. Yeni uzunlugu buluyorum
+
+   500                         153
+    kendifiyatim         ?
+
+    7.Actions methodu içerisine, önce hangi slideri hareket ettireceginizi, X ekseninde ne kadar hareket ettireceginizi, varsa Y ekseninde ne kadar hareket ettireceginizi(yoksa 0 ) yazın ve .perform(); diyin:
+
+     actions.dragAndDropBy(solKaydirici,kaydirmaOrani1,0).perform();
+
+
+         */
+
         WebElement solKaydirici = driver.findElement(By.cssSelector("div[aria-controls='f-price-min']"));
         WebElement sagKaydirici = driver.findElement(By.cssSelector("div[aria-controls='f-price-max']"));
 
