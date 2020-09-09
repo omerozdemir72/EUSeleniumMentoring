@@ -66,7 +66,9 @@ String firstUrl = driver.getCurrentUrl();
         slc=new Select(element);
         slc.selectByValue("Germany");
 
-        js.executeScript("window.scrollBy(0,600)");
+       js.executeScript("window.scrollBy(0,600)");
+
+        Thread.sleep(1000);
 
 element = driver.findElement(By.cssSelector("#input_11"));
 
@@ -113,5 +115,7 @@ String secondUrl = driver.getCurrentUrl();
         WebElement submission = driver.findElement(By.xpath("//*[@id=\"stage\"]/div/p"));
         Assert.assertEquals("Hata", "Your submission has been received.", submission.getText());
 
+
+        System.out.println("Tüm testler başarıyla geçmiştir...");
     }
 }
