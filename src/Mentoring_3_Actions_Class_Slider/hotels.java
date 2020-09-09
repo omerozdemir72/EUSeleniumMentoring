@@ -100,6 +100,30 @@ kendi fiyatim ile 153 ü çarpıyorum ve 500 e bölüyorum. Yeni uzunlugu buluyo
         Thread.sleep(3000);
 
 
+        WebElement puanSolslider = driver.findElement(By.xpath("//div[@aria-labelledby='f-guest-rating-min-label']"));
+        WebElement puanSagSlider = driver.findElement(By.xpath("//div[@aria-labelledby='f-guest-rating-max-label']"));
+        WebElement puanSlideCubugu = driver.findElement(By.xpath("(//div[@class='widget-slider-cont'])[2]"));
+
+        int puanGenislik = puanSlideCubugu.getSize().getWidth();
+
+        System.out.println("Puan çubuğu genişliği:  " + puanGenislik);
+
+        int puanAltSinir = 0;
+        int puanUstSinir =10;
+
+        int  istedigimAltSinir= 2;
+        double istedigimUstSinir= 3.5;
+
+        int kaydirmaOrani3=  (istedigimAltSinir *puanGenislik / (puanUstSinir - puanAltSinir));
+        double kaydirmaOrani4=  (istedigimUstSinir *puanGenislik / (puanUstSinir - puanAltSinir));
+
+        actions.dragAndDropBy(puanSolslider,kaydirmaOrani3,0).perform();
+        actions.dragAndDropBy(puanSagSlider, (int) -kaydirmaOrani4,0).perform();
+
+
+
+
+
 
 
 
