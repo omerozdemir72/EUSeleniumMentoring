@@ -13,22 +13,33 @@ public class Alert1 {
         driver.get("http://www.demo.guru99.com/test/delete_customer.php");
 
 
-
         WebElement id = driver.findElement(By.cssSelector("input[name='cusid']"));
 
         id.sendKeys("omer123");
 
+        WebElement submitButton = driver.findElement(By.cssSelector("input[name='submit']"));
 
-    WebElement submitButton = driver.findElement(By.cssSelector("input[name='submit']"));
+        submitButton.click();
 
-    submitButton.click();
+        Thread.sleep(1500);
+
+        System.out.println(driver.switchTo().alert().getText());
+
+        driver.switchTo().alert().accept();
 
 
+        Thread.sleep(1500);
 
+        System.out.println(driver.switchTo().alert().getText());
 
+        driver.switchTo().alert().accept();
+        Thread.sleep(3000);
+        driver.quit();
 
-
+        driver.switchTo().alert().dismiss();
 
 
     }
-}
+    }
+
+
