@@ -1,0 +1,17 @@
+<suite name="My Suite">
+    <tests name="My Tests">
+        <test name="Test1">
+           <classes>
+                <class name="TestNG.Testler_assert"/>
+                <class name="TestNG.Testler_enabled"/>
+            <!--   <class name="TestNG.Testler_priority"/> -->
+            </classes>
+        </test>
+        <test name="Test 2">
+            <classes>
+                <class name="TestNG.hiyerarsi"/>
+                <class name="TestNG.Testler_priority"/>
+            </classes>
+        </test>
+    </tests>
+</suite>

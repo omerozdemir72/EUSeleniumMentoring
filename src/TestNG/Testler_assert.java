@@ -33,14 +33,12 @@ public class Testler_assert {
         System.out.println("c:  " + c );
 
         Assert.assertTrue(c<12);
-
     }
     @AfterClass
     public void AfterClass(){
 
         System.out.println("SİSTEM KAPATILIYOR .............................");
     }
-
     @Test(priority = 1)
     public void Test2(){
 
@@ -51,10 +49,6 @@ public class Testler_assert {
         Assert.assertEquals(a+b,15);
         //Junit
       //  Assert.assertEquals(15,a+b);
-
         System.out.println("Sonuç 15 tir.");
-
-
     }
-
 }
