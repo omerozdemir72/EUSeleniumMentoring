@@ -1,4 +1,4 @@
-package TestNG;
+package Mentoring_6_TestNG;
 
 import org.testng.annotations.Test;
 
